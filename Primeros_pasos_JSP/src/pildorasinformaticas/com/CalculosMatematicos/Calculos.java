@@ -2,7 +2,7 @@ package pildorasinformaticas.com.CalculosMatematicos;
 
 public class Calculos {
 
-	//
+	
 	private static int resultado;
 	
 	public static int metodoSuma(int num1, int num2){
