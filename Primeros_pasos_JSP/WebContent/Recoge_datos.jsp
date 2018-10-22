@@ -23,6 +23,8 @@
 
 	String tecno=request.getParameter("tecnologias");
 	
+	Class.forName("com.mysql.jdbc.Driver");
+	
 	java.sql.Connection miConexion=DriverManager.getConnection("jdbc:mysql://localhost:3306/proyecto_jsp");
 
 	java.sql.Statement miStatement = miConexion.createStatement();
