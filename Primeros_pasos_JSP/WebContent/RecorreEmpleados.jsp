@@ -69,8 +69,22 @@
 <c:forEach var="EmpTemp" items="${losEmpleados}">
 
 <tr>
-	<td>${EmpTemp.nombre}</td> <td>${EmpTemp.apellido}</td> <td>${EmpTemp.puesto}</td> <td>${EmpTemp.salario}</td> 
+
+	<td>${EmpTemp.nombre}</td> <td>${EmpTemp.apellido}</td> <td>${EmpTemp.puesto}</td>  
+	<td>
+	<c:if test="${EmpTemp.salario < 20000 }">
+	
+		${ EmpTemp.salario + 3000 }
+	
+	</c:if>
+	<c:if test="${EmpTemp.salario >= 20000 }">
+	
+		${ EmpTemp.salario}
+	
+	</c:if>
+	</td>
 </tr>
+
 
 </c:forEach>
 
