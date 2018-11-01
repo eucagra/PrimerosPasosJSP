@@ -72,7 +72,7 @@
 
 	<td>${EmpTemp.nombre}</td> <td>${EmpTemp.apellido}</td> <td>${EmpTemp.puesto}</td>  
 	<td>
-	<c:if test="${EmpTemp.salario < 20000 }">
+	<!--<c:if test="${EmpTemp.salario < 20000 }">
 	
 		${ EmpTemp.salario + 3000 }
 	
@@ -81,7 +81,30 @@
 	
 		${ EmpTemp.salario}
 	
-	</c:if>
+	</c:if>-->
+	
+	<c:choose>
+		
+		<c:when test="${EmpTemp.salario < 20000}">
+			
+			${EmpTemp.salario+2000}
+			
+		</c:when>
+		
+		<c:when test="${EmpTemp.salario > 19000 && EmpTemp.salario < 30000}">
+			
+			${EmpTemp.salario+1000}
+			
+		</c:when>
+		
+		<c:otherwise>
+		
+			${EmpTemp.salario}
+		
+		</c:otherwise>
+		
+	</c:choose>
+	
 	</td>
 </tr>
 
